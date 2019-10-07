@@ -52,7 +52,7 @@ nav li {
     background-image: url(../images/dewang-gupta-272186-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +73,7 @@ nav li {
 .main-text h2 {
     font-size: 20px;
     font-weight: 200;
-    margin: 25px 0 30px 0px;
+    margin: 25px 0 35px 0;
 }
 
 .offer-btn {
@@ -83,6 +83,7 @@ nav li {
     border: none;
     border-radius: 2px;
     cursor: pointer;
+    margin: 9px 0 0 0;
     
 }
 
@@ -99,7 +100,7 @@ nav li {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 150px;
+    padding: 0 240px;
 }
 
 
@@ -130,6 +131,7 @@ nav li {
 }
 
 .image img {
+    height: 255px;
     border-radius: 5px;
 }
 
@@ -138,7 +140,7 @@ nav li {
 
 .offer {
     display: flex;
-    padding: 0 220px;
+    padding: 0 270px;
     justify-content:space-between;
 }
 
@@ -147,7 +149,6 @@ nav li {
     width: 260px;
     background-color: #fcfbfb;
     margin: 35px 9px;
-    border-radius: 7px;
     display: flex;
     flex-direction: column;
     align-items: center;

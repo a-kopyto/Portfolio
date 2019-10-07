@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function showHideText() {
         const siblingsText = this.previousElementSibling;
         
-        if (siblingsText.style.display === "none" || siblingsText.style.display === "") {         //siblings filmik 13_1(?)
+        if (siblingsText.style.display === "none" || siblingsText.style.display === "") {
             siblingsText.style.display = "block";
             this.textContent = "Czytaj mniej";
         } else {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }    
     };
     
-    for (let i = 0; i < readMoreLessBtn.length; i++) {                  //filmik 13_2
+    for (let i = 0; i < readMoreLessBtn.length; i++) {
         readMoreLessBtn[i].addEventListener("click", showHideText)
     };
     
@@ -58,21 +58,46 @@ document.addEventListener("DOMContentLoaded", function() {
     
     const slidesWidth = slides[0].clientWidth;
     let currentIndex = 0;
-    let slidesNumber = slides.length - 1;                 //dlaczego -1 ???????
+    let slidesNumber=slides.length-1;
     
     function goToSlide(index) {
-        slider.style.left = index * (-slidesWidth) + "px";
+        if (index <0) {
+            index = slidesNumber;
+        } else if (index > slidesNumber) {
+            index = 0;
+        }
+            
+        slider.style.left= index * (-slidesWidth) + "px";
         currentIndex = index;
-    };
+    }
+    
+    
+    function slideToNext() {
+        goToSlide(currentIndex + 1);
+    }
+    
+    function slideToPrev() {
+        goToSlide(currentIndex - 1);
+    }
+    
+    prev.addEventListener("click", slideToPrev);
+    next.addEventListener("click", slideToNext);
+    setInterval(slideToNext, 5000);
 
-    goToSlide(3);
+
+//go-up-Button
+
+    const goUpBtn = document.querySelector(".go-up i");
+    
+    goUpBtn.addEventListener("click", function() {
+       window.scroll({
+           top: 0,
+           left: 0,
+           behavior: "smooth"
+       });
+    });
+
 });
-
-
-
-
-
-
 
 
 

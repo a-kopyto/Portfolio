@@ -246,6 +246,7 @@ nav li {
     background-color: #647e32;
     color: #f2f2f2;
     padding: 0 10px;
+    cursor: pointer;
 }
 
 

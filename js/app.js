@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function showHideText() {
         const siblingsText = this.previousElementSibling;
         
-        if (siblingsText.style.display === "none" || siblingsText.style.display === "") {
+        if (siblingsText.style.display === "none" || siblingsText.style.display === "") {         //siblings video 13_1(?)
             siblingsText.style.display = "block";
             this.textContent = "Czytaj mniej";
         } else {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }    
     };
     
-    for (let i = 0; i < readMoreLessBtn.length; i++) {
+    for (let i = 0; i < readMoreLessBtn.length; i++) {                  //video13_2
         readMoreLessBtn[i].addEventListener("click", showHideText)
     };
     
@@ -38,14 +38,16 @@ document.addEventListener("DOMContentLoaded", function() {
     
     
     newsletterBtn.addEventListener("click", function(event) {
-        event.preventDefault();                           //zapobiega przeładowaniu strony i blokuje defaultowe powiadomienia JS
-//        formInfo.style.display = "block";                     //można też umieścić tylko tutaj a te poniżej usunąć
-        if (input.value !== "") {
-            formInfo.style.display = "block";
-            formInfo.textContent = "Zapisano poprawnie do newslettera";
+        event.preventDefault();
+        formInfo.style.display = "block";
+        
+        if (input.value == "") {
+            formInfo.textContent = "Pole puste, wpisz adres e-mail";
+            input.value = "";
+        } else if (!input.value.includes("@")) {
+            formInfo.textContent = "Wpisz poprawnie adres e-mail"
         } else {
-            formInfo.style.display = "block";
-            formInfo.textContent = "Pole nie może być puste, podaj adres e-mail";
+            formInfo.textContent = "Wpisz adres e-mail";
         }
     });
 

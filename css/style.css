@@ -29,7 +29,7 @@ nav > ul {
 
 nav a {
     text-decoration: none;
-    color: #ffffff;
+    color: white;
 }
 
 nav a:hover {
@@ -291,6 +291,8 @@ nav li {
     padding: 0px;
     display: flex;
     position: relative;
+    transition: .3s linear;
+    
 }
 
 /*GO-UP*/
